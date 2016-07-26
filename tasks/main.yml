@@ -1,12 +1,15 @@
 ---
 # tasks file for hswong3i.postgresql
 
+- name: include release specific variables
+  include_vars: "{{ ansible_distribution_release }}.yml"
+  tags: hswong3i.postgresql
+
 - name: apt-key add
   apt_key:
     url: "{{ item.url }}"
     state: "{{ item.state }}"
-  with_items:
-    - { state: "present", url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc" }
+  with_items: "{{ _apt_key }}"
   notify: restart postgresql
   tags: hswong3i.postgresql
 
@@ -14,8 +17,7 @@
   apt_repository:
     repo: "{{ item.repo }}"
     state: "{{ item.state }}"
-  with_items:
-    - { state: "present", repo: "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" }
+  with_items: "{{ _apt_repository }}"
   notify: restart postgresql
   tags: hswong3i.postgresql
 
@@ -23,17 +25,7 @@
   apt:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  with_items:
-    - { state: "absent", name: "postgresql-9.3" }
-    - { state: "absent", name: "postgresql-client-9.3" }
-    - { state: "absent", name: "postgresql-contrib-9.3" }
-    - { state: "latest", name: "autopostgresqlbackup" }
-    - { state: "latest", name: "libdbd-pg-perl" }
-    - { state: "latest", name: "pgdg-keyring" }
-    - { state: "latest", name: "postgresql-9.5" }
-    - { state: "latest", name: "postgresql-client-9.5" }
-    - { state: "latest", name: "postgresql-contrib-9.5" }
-    - { state: "latest", name: "python-psycopg2" }
+  with_items: "{{ _apt }}"
   notify: restart postgresql
   tags: hswong3i.postgresql
 

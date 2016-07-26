@@ -1,0 +1,13 @@
+---
+# vars file for hswong3i.postgresql (xenial)
+
+_apt_key: []
+_apt_repository: []
+_apt: [
+  { state: "latest", name: "autopostgresqlbackup" },
+  { state: "latest", name: "libdbd-pg-perl" },
+  { state: "latest", name: "postgresql-9.5" },
+  { state: "latest", name: "postgresql-client-9.5" },
+  { state: "latest", name: "postgresql-contrib-9.5" },
+  { state: "latest", name: "python-psycopg2" },
+]
