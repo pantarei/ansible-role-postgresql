@@ -3,5 +3,7 @@
 
 - name: restart postgresql
   service:
-    name: "postgresql"
-    state: "restarted"
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items:
+    - { name: "postgresql", state: "restarted" }

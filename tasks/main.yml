@@ -44,7 +44,9 @@
 
 - name: enable service
   service:
-    name: "postgresql"
-    enabled: "yes"
+    name: "{{ item.name }}"
+    enabled: "{{ item.enabled }}"
+  with_items:
+    - { name: "postgresql", enabled: "yes" }
   notify: restart postgresql
   tags: hswong3i.postgresql
