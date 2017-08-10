@@ -1,12 +1,12 @@
 ---
 # defaults file for hswong3i.postgresql
 
-postgresql_data_directory: "/var/lib/postgresql/9.6/main"
+postgresql_data_directory: "/var/lib/postgresql/9.5/main"
 postgresql_datestyle: "iso, mdy"
 postgresql_default_text_search_config: "pg_catalog.english"
-postgresql_external_pid_file: "/var/run/postgresql/9.6-main.pid"
-postgresql_hba_file: "/etc/postgresql/9.6/main/pg_hba.conf"
-postgresql_ident_file: "/etc/postgresql/9.6/main/pg_ident.conf"
+postgresql_external_pid_file: "/var/run/postgresql/9.5-main.pid"
+postgresql_hba_file: "/etc/postgresql/9.5/main/pg_hba.conf"
+postgresql_ident_file: "/etc/postgresql/9.5/main/pg_ident.conf"
 postgresql_lc_messages: "en_US.UTF-8"
 postgresql_lc_monetary: "en_US.UTF-8"
 postgresql_lc_numeric: "en_US.UTF-8"
@@ -20,7 +20,7 @@ postgresql_shared_buffers: "128MB"
 postgresql_ssl: "true"
 postgresql_ssl_cert_file: "/etc/ssl/certs/ssl-cert-snakeoil.pem"
 postgresql_ssl_key_file: "/etc/ssl/private/ssl-cert-snakeoil.key"
-postgresql_stats_temp_directory: "/var/run/postgresql/9.6-main.pg_stat_tmp"
+postgresql_stats_temp_directory: "/var/run/postgresql/9.5-main.pg_stat_tmp"
 postgresql_timezone: "UTC"
 postgresql_unix_socket_directories: "/var/run/postgresql"
 
