@@ -8,12 +8,16 @@ _apt_repository: [
   { state: "present", repo: "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" },
 ]
 _apt: [
+  { state: "absent", name: "postgresql" },
   { state: "absent", name: "postgresql-9.3" },
   { state: "absent", name: "postgresql-9.6" },
+  { state: "absent", name: "postgresql-client" },
   { state: "absent", name: "postgresql-client-9.3" },
   { state: "absent", name: "postgresql-client-9.6" },
+  { state: "absent", name: "postgresql-contrib" },
   { state: "absent", name: "postgresql-contrib-9.3" },
   { state: "absent", name: "postgresql-contrib-9.6" },
+  { state: "absent", name: "postgresql-doc" },
   { state: "absent", name: "postgresql-doc-9.3" },
   { state: "absent", name: "postgresql-doc-9.6" },
   { state: "latest", name: "autopostgresqlbackup" },
