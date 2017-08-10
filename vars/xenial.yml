@@ -9,13 +9,16 @@ _apt_repository: [
 ]
 _apt: [
   { state: "absent", name: "postgresql-9.3" },
+  { state: "absent", name: "postgresql-9.5" },
   { state: "absent", name: "postgresql-client-9.3" },
+  { state: "absent", name: "postgresql-client-9.5" },
   { state: "absent", name: "postgresql-contrib-9.3" },
+  { state: "absent", name: "postgresql-contrib-9.5" },
   { state: "latest", name: "autopostgresqlbackup" },
   { state: "latest", name: "libdbd-pg-perl" },
   { state: "latest", name: "pgdg-keyring" },
-  { state: "latest", name: "postgresql-9.5" },
-  { state: "latest", name: "postgresql-client-9.5" },
-  { state: "latest", name: "postgresql-contrib-9.5" },
+  { state: "latest", name: "postgresql-9.6" },
+  { state: "latest", name: "postgresql-client-9.6" },
+  { state: "latest", name: "postgresql-contrib-9.6" },
   { state: "latest", name: "python-psycopg2" },
 ]
